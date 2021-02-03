@@ -1,45 +1,34 @@
 import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-import { getContacts, getLoader } from './redux/contacts/contacts-selectors';
-import { fetchContacts } from './redux/contacts/contacts-operations';
+import { useDispatch } from 'react-redux';
+import { Switch, Route } from 'react-router-dom';
+import AppBar from './components/AppBar';
+import ContactsView from './views/ContactsView';
+import HomeView from './views/HomeView';
+import RegisterView from './views/RegisterView';
+import LoginView from './views/LoginView';
 import Container from './components/Container';
-import ContactForm from './components/ContactForm';
-import Filter from './components/Filter';
-import ContactList from './components/ContactList';
-import NumberContacts from './components/NumberContacts';
+import { authOperations } from './redux/auth';
 
 import './App.css';
 
 function App() {
-  const contacts = useSelector(getContacts);
-  const loader = useSelector(getLoader);
   const dispatch = useDispatch();
 
-  useEffect(() => dispatch(fetchContacts()), [dispatch]);
+  useEffect(() => {
+    dispatch(authOperations.fetchCurrentUser());
+  }, [dispatch]);
 
   return (
     <div className="App">
       <Container>
-        <h1 className="main__title">Phonebook</h1>
-        <ContactForm />
+        <AppBar />
 
-        {contacts.length > 0 ? (
-          <div>
-            <h2 className="section__title">Contacts</h2>
-            <Filter />
-            <ContactList />
-            <NumberContacts />
-          </div>
-        ) : (
-          <p>Your phone book is empty :(</p>
-        )}
-
-        {loader && <p>Loading...</p>}
-
-        <ToastContainer autoClose={3000} />
+        <Switch>
+          <Route exact path="/" component={HomeView} />
+          <Route path="/register" component={RegisterView} />
+          <Route path="/login" component={LoginView} />
+          <Route path="/contacts" component={ContactsView} />
+        </Switch>
       </Container>
     </div>
   );
