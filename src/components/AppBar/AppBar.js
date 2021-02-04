@@ -4,7 +4,16 @@ import Navigation from '../Navigation';
 import UserMenu from '../UserMenu';
 import AuthNav from '../AuthNav';
 import { authSelectors } from '../../redux/auth';
-import styles from './AppBar.module.css';
+// import styles from './AppBar.module.css';
+
+const styles = {
+  header: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderBottom: '1px solid #2A363B',
+  },
+};
 
 function AppBar() {
   const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);

@@ -1,7 +1,18 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
-import styles from './LoginView.module.css';
+// import styles from './LoginView.module.css';
+
+const styles = {
+  form: {
+    width: 320,
+  },
+  label: {
+    display: 'flex',
+    flexDirection: 'column',
+    marginBottom: 15,
+  },
+};
 
 function LoginView() {
   const dispatch = useDispatch();

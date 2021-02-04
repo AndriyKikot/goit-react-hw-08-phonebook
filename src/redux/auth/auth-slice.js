@@ -25,15 +25,15 @@ const authSlice = createSlice({
     [authOperations.register.rejected](state, action) {
       state.errorRegister = 'Registration error. Please try again';
     },
-    [authOperations.login.fulfilled](state, action) {
+    [authOperations.logIn.fulfilled](state, action) {
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
     },
-    [authOperations.login.pending](state, action) {
+    [authOperations.logIn.pending](state, action) {
       state.errorLogin = null;
     },
-    [authOperations.login.rejected](state, action) {
+    [authOperations.logIn.rejected](state, action) {
       state.errorLogin = 'Something went wrong. Please try again';
     },
     [authOperations.logOut.fulfilled](state, action) {
