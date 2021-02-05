@@ -23,7 +23,7 @@ const authSlice = createSlice({
       state.errorRegister = null;
     },
     [authOperations.register.rejected](state, action) {
-      state.errorRegister = 'Registration error. Please try again';
+      state.errorRegister = 'Registration error:( Please try again!';
     },
     [authOperations.logIn.fulfilled](state, action) {
       state.user = action.payload.user;
@@ -34,7 +34,7 @@ const authSlice = createSlice({
       state.errorLogin = null;
     },
     [authOperations.logIn.rejected](state, action) {
-      state.errorLogin = 'Something went wrong. Please try again';
+      state.errorLogin = 'Something went wrong:( Please try again!';
     },
     [authOperations.logOut.fulfilled](state, action) {
       state.user = { name: null, email: null };

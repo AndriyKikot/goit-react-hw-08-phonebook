@@ -11,7 +11,7 @@ function AuthNav() {
         className={styles.link}
         activeClassName={styles.activeLink}
       >
-        Регистрация
+        Registration
       </NavLink>
       <NavLink
         to="/login"
@@ -19,7 +19,7 @@ function AuthNav() {
         className={styles.link}
         activeClassName={styles.activeLink}
       >
-        Логин
+        Login
       </NavLink>
     </div>
   );

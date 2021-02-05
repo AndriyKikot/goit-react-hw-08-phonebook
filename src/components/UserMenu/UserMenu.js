@@ -12,7 +12,11 @@ function UserMenu() {
     <div className={styles.container}>
       <img src={avatar} alt="" width="32" className={styles.avatar} />
       <span className={styles.name}>Welcome, {name}</span>
-      <button type="button" onClick={() => dispatch(authOperations.logOut())}>
+      <button
+        className={styles.btn}
+        type="button"
+        onClick={() => dispatch(authOperations.logOut())}
+      >
         Log out
       </button>
     </div>

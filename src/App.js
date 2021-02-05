@@ -12,6 +12,8 @@ import { authOperations } from './redux/auth';
 import { authSelectors } from './redux/auth';
 import PrivateRoute from './components/PrivateRoute';
 import PublicRoute from './components/PublicRoute';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import './App.css';
 
@@ -64,6 +66,8 @@ function App() {
               </PrivateRoute>
             </Switch>
           </Suspense>
+
+          <ToastContainer autoClose={3000} />
         </Container>
       </div>
     )
