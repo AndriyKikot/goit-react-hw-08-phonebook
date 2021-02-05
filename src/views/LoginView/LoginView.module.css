@@ -1,9 +1,36 @@
-.form {
-  width: 320;
+.container {
+  width: 320px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.title {
+  margin-bottom: 10px;
 }
 
 .label {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
+}
+
+.input {
+  margin-top: 5px;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: yellow;
+  color: black;
+  border: 1px solid yellow;
+  padding: 5px 10px;
+  border-radius: 2px;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: yellow;
+  transition: 0.2s;
+  border: 1px solid yellow;
 }

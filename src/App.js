@@ -2,6 +2,7 @@ import { useEffect, lazy, Suspense } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Switch } from 'react-router-dom';
 import AppBar from './components/AppBar';
+import Preloader from './components/Preloader';
 // import ContactsView from './views/ContactsView';
 // import HomeView from './views/HomeView';
 // import RegisterView from './views/RegisterView';
@@ -44,7 +45,7 @@ function App() {
         <Container>
           <AppBar />
 
-          <Suspense fallback={'Загружаем'}>
+          <Suspense fallback={<Preloader />}>
             <Switch>
               <PublicRoute exact path="/">
                 <HomeView />

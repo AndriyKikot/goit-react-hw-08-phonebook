@@ -1,18 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { authOperations } from '../../redux/auth';
-// import styles from './RegisterView.module.css';
-
-const styles = {
-  form: {
-    width: 320,
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 15,
-  },
-};
+import styles from './RegisterView.module.css';
 
 function RegisterView() {
   const dispatch = useDispatch();
@@ -42,18 +31,25 @@ function RegisterView() {
   };
 
   return (
-    <div>
-      <h1>Страница регистрации</h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Registration page</h1>
 
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
-          Имя
-          <input type="text" name="name" value={name} onChange={handleChange} />
+      <form onSubmit={handleSubmit} className={styles.form} autoComplete="off">
+        <label className={styles.label}>
+          Name
+          <input
+            className={styles.input}
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleChange}
+          />
         </label>
 
-        <label style={styles.label}>
-          Почта
+        <label className={styles.label}>
+          E-mail
           <input
+            className={styles.input}
             type="email"
             name="email"
             value={email}
@@ -61,17 +57,21 @@ function RegisterView() {
           />
         </label>
 
-        <label style={styles.label}>
-          Пароль
+        <label className={styles.label}>
+          Password
           <input
+            className={styles.input}
             type="password"
             name="password"
             value={password}
             onChange={handleChange}
+            autoComplete="off"
           />
         </label>
 
-        <button type="submit">Зарегистрироваться</button>
+        <button className={styles.btn} type="submit">
+          Sign up
+        </button>
       </form>
     </div>
   );
