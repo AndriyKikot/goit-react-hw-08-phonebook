@@ -8,12 +8,10 @@ import {
   getLoader,
 } from '../../redux/contacts/contacts-selectors';
 import { fetchContacts } from '../../redux/contacts/contacts-operations';
-// import Container from '../../components/Container';
 import ContactForm from '../../components/ContactForm';
 import Filter from '../../components/Filter';
 import ContactList from '../../components/ContactList';
 import NumberContacts from '../../components/NumberContacts';
-
 import styles from './ContactView.module.css';
 
 function ContactView() {
